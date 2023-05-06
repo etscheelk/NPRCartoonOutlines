@@ -1,5 +1,7 @@
+## Ethan Scheelk
+### Macalester College, 1600 Grand Avenue, Saint Paul, MN
 # NPRCartoonOutlines
-COMP465 Interactive Computer Graphics Final Project
+**COMP465 Interactive Computer Graphics Final Project** -- Professor Bret Jackson
 
 The goal of this project was to implement cartoon graphics within OpenGL and C++. 
 Primarily, this involved finding depth and normal maps, finding the edges of those maps, then combining those edges on to 
