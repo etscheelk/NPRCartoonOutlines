@@ -73,13 +73,12 @@ void main() {
 
     finalColor = vec3(pNormal);
     finalColor = vec3((pNormal + pDepth) / 1.0);
-//    finalColor = vec3(pNormal);
-//    finalColor = vec3(pDepth);
     
+
+    // If the final added color isn't bright about, discard it
     if (finalColor.x < 0.75) {
         finalColor = vec3(0.0);
     }
-//    finalColor = vec3(pDepth);
     
   
     fragColor.rgb = finalColor.rgb;

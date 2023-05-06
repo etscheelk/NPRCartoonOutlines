@@ -22,7 +22,8 @@ void main() {
     float depth = LinearizeDepth(gl_FragCoord.z) / far;
     fragColor.rgb = vec3(depth);
 
-//    fragColor.rgb = vec3((gl_FragCoord.z) * 2.0 - 1.0);
+    // Alternate non-linear depth
+    //    fragColor.rgb = vec3((gl_FragCoord.z) * 2.0 - 1.0);
 
 	// And, set the alpha component to 1.0 (completely opaque, no transparency).
 	fragColor.a = 1.0;

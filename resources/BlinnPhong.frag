@@ -69,13 +69,10 @@ void main() {
 	vec3 finalColor = vec3(0.0, 0.0, 0.0);
 
     // Calculate ambient, diffuse, and specular lighting for this pixel based on its position, normal, etc.
-//    vec3 ambient = ambientLightIntensity * ambientReflectionCoeff; 
     vec3 ambient = ambientLightIntensity * color; 
 
-//    vec3 diffuse = diffuseLightIntensity * diffuseReflectionCoeff * vec3(texture(diffuseRamp, vec2(NdotL, 0.0)));
     vec3 diffuse = diffuseLightIntensity * color * vec3(texture(diffuseRamp, vec2(NdotL, 0.0)));
 	
-//    vec3 specular = specularLightIntensity * specularReflectionCoeff * vec3(texture(specularRamp, vec2(pow(HdotN, specularExponent), 0.0)));
     vec3 specular = specularLightIntensity * color * vec3(texture(specularRamp, vec2(pow(HdotN, specularExponent), 0.0)));
     
     
@@ -88,72 +85,11 @@ void main() {
 	// Tell OpenGL to use the r,g,b compenents of finalColor for the color of this fragment (pixel).
     fragColor.rgb = finalColor.rgb;
 
+    // If edge color is bright enough, use it. 
     if (edgeColor.x > 0.5) {
         fragColor.rgb = vec3(0.0);
     }
 
-    // Math Visualization Stuff. Please don't leave it enabled for bunny stuff
-//    fragColor.rgb = vec3(0.0);
-//    float plotWidth = 2.0;
-//    float x = (Xp.x / windowWidth)  * plotWidth - plotWidth / 2.0;
-//    float y = (Xp.y / windowHeight) * plotWidth - plotWidth / 2.0;
-
-//    vec2 u = vec2(x, y);
-//    vec2 v = vec2(0.5, 0.9);
-//
-//    // bray curtis
-//    vec2 diff = abs(u - v);
-//    vec2 sum = abs(u + v);
-//
-//    float dist = (diff.x + diff.y) / (sum.x + sum.y);
-//    if (dist <= 1.0)
-//        fragColor.rgb = vec3(1.0);
-    
-//    mapP(x, y, 2, vec3(1.0));
-
-    
-//    mapP(x, y, 0.5, vec3(1.0));
-//
-//    float p = 10000;
-//    mapP(x, y, p, vec3(1.0));
-//
-//    p = 5;
-//    mapP(x, y, p, vec3(1.0, 0.0, 0.0));
-//
-//    p = 3;
-//    mapP(x, y, p, vec3(1.0, 0.7, 0.0));
-//
-//    p = 2.5;
-//    mapP(x, y, p, vec3(1.0, 1.0, 0.0));
-//
-//    p = 2;
-//    mapP(x, y, p, vec3(0.0, 0.5, 0.0));
-//
-//    p = 1.5;
-//    mapP(x, y, p, vec3(0.0, 0.0, 1.0));
-//
-//    p = 1;
-//    mapP(x, y, p, vec3(0.25, 0.0, 0.5));
-//
-//    p = 0.75;
-//    mapP(x, y, p, vec3(0.9, 0.5, 0.9));
-//
-//    p = 0.5;
-//    mapP(x, y, p, vec3(242/255.0, 218/255.0, 227/255.0));
-
-    
-
-//     fragColor.rgb = edgeColor;
-
-    // https://gamedev.net/forums/topic/584076-glsl-edit-texture-and-save-it/4714863/
-    // https://www.khronos.org/opengl/wiki/Framebuffer_Object 
-//    fragColor.rgb = 0.5 * N + 0.5;
-
-//    float depth = LinearizeDepth(gl_FragCoord.z) / far;
-//    fragColor.rgb = vec3(depth);
-
-    
-  
 
 	// And, set the alpha component to 1.0 (completely opaque, no transparency).
 	fragColor.a = 1.0;

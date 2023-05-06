@@ -53,7 +53,9 @@ void main() {
     
     // Multiplied by 16 for visibility. REMEMBER TO DIVIDE OUT IN PROCESSING
     fragColor.rgb = vec3(16 * (gx + gy + gz) / 3.0);
-//    fragColor.rgb = 16 * vec3(gx, gy, gz); 
+    
+    // Technorabbit
+    //    fragColor.rgb = 16 * vec3(gx, gy, gz); 
 
 	// And, set the alpha component to 1.0 (completely opaque, no transparency).
 	fragColor.a = 1.0;

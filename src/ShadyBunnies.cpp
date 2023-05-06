@@ -203,9 +203,9 @@ void ShadyBunny::onRenderGraphicsContext(const VRGraphicsState &renderState) {
 		_edgesTex = Texture::createEmpty("edgesTex", _windowWidth, _windowHeight, 1, 0, false, GL_TEXTURE_2D, GL_RGBA);
 		generateFramebuffer(_edgesFB, _edgesTex, _rbo);
 		
+		// To remember
 		/*if (glCheckFramebufferStatus(GL_FRAMEBUFFER) != GL_FRAMEBUFFER_COMPLETE)
 			std::cout << "ERROR::FRAMEBUFFER:: Framebuffer is not complete!" << std::endl;*/
-		//glBindRenderbuffer(GL_RENDERBUFFER, 0);
 
 
 		// Diffuse Ramp
@@ -289,6 +289,7 @@ void ShadyBunny::setMaterialUniforms(GLSLProgram &shader) {
 
 	// Properties of the material the model is made out of (the "K" terms in the equations discussed in class)
 	// These values should make the model look like it is made out of a metal, like brass
+	// Leftover real values
 	/*vec3 ambientReflectionCoeff = vec3(0.4125, 0.275, 0.0375);
 	vec3 diffuseReflectionCoeff = vec3(0.78, 0.57, 0.11);
 	vec3 specularReflectionCoeff = vec3(0.99, 0.94, 0.80); 
@@ -334,7 +335,7 @@ void ShadyBunny::setMaterialUniforms(GLSLProgram &shader) {
 void ShadyBunny::onRenderGraphicsScene(const VRGraphicsState &renderState) {
     // This routine is called once per eye.  This is the place to actually
     // draw the scene.
-	                                               
+
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);  
     
 	// Setup the camera with a good initial position and view direction to see the table
