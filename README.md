@@ -13,4 +13,6 @@ This repository includes an optional window preset to launch it in 1600x900. Thi
 
 'A', 'S', and 'D' toggle ambient, specular, and diffuse lighting, respectively. Press 'F' to view the render pass stages. 
 
+Paper link: [here](final_Non_photorealistic_Rendering_for_Cartoon_Artstyle.pdf)
+
 ![](images/finalfinal.png)
